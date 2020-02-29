@@ -1,0 +1,32 @@
+package com.nius.IO.字符乱码;
+
+import java.io.UnsupportedEncodingException;
+
+public class Convert1 {
+	public static void main(String[] args) {
+		String str = "hello 你是谁？";
+		System.out.println(str);
+		
+		byte[] bytes1 = str.getBytes();
+		String str1 = new String(bytes1);
+		System.out.println(str1);
+		
+		byte[] bytes2;
+		try {
+			bytes2 = str.getBytes("gbk");
+			String str2 = new String(bytes2, "gbk");
+			System.out.println(str2);
+		} catch (UnsupportedEncodingException e) {
+			e.printStackTrace();
+		}
+		
+		byte[] bytes3;
+		try {
+			bytes3 = str.getBytes("utf-8");
+			String str3 = new String(bytes3, "gbk");
+			System.out.println(str3);
+		} catch (UnsupportedEncodingException e) {
+			e.printStackTrace();
+		}
+	}
+}

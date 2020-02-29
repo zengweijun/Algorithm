@@ -1,0 +1,37 @@
+package com.nius.thread;
+
+public class Rabbit implements Runnable {
+	
+	public static void main(String[] args) {
+		test1();
+	}
+	
+	public static void test1() {
+		System.out.println("====================");
+		
+		
+		
+		Rabbit r1 = new Rabbit();
+		Thread t1 = new Thread(r1);
+//		t1.start();
+		t1.run();
+		
+		
+		new Thread(new Runnable() {
+			@Override
+			public void run() {
+				System.out.println("run2-->" + Thread.currentThread());
+			}
+		}).start();;
+//		t2.start();
+		
+		System.out.println("test1-->" + Thread.currentThread());
+		
+	}
+
+	@Override
+	public void run() {
+		System.out.println("run1-->" + Thread.currentThread());
+		
+	}
+}

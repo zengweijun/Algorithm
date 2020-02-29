@@ -1,0 +1,9 @@
+package com.nius.IO.字符乱码;
+
+public class Convert1 {
+	public static void main(String[] args) {
+		String str = "hello 你是谁？";
+		System.out.println(str);
+		
+	}
+}

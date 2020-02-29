@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="b2b48ab7-34ab-47a2-9f37-ec8f3556037b" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../../Algorithm/Java/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Algorithm/Java/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Algorithm/Java/src/com/nius/dynamicProgramming/_最长公共子序列.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Algorithm/Java/src/com/nius/dynamicProgramming/_最长公共子序列.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaTest/bin/META-INF/JavaTest.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaTest/bin/Test.class" beforeDir="false" afterPath="$PROJECT_DIR$/../JavaTest/bin/Test.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaTest/bin/com/Net/MyInetAddress.class" beforeDir="false" afterPath="$PROJECT_DIR$/../JavaTest/bin/com/Net/MyInetAddress.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaTest/bin/com/Net/MyInetSocketAddress.class" beforeDir="false" afterPath="$PROJECT_DIR$/../JavaTest/bin/com/Net/MyInetSocketAddress.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaTest/bin/com/Net/URL_URI.class" beforeDir="false" afterPath="$PROJECT_DIR$/../JavaTest/bin/com/Net/URL_URI.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaTest/bin/com/Net/bjsxt/net/url/URLDemo02.class" beforeDir="false" afterPath="$PROJECT_DIR$/../JavaTest/bin/com/Net/bjsxt/net/url/URLDemo02.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaTest/bin/com/bjsxt/io/buffered/BufferedByteDemo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaTest/bin/com/bjsxt/io/buffered/BufferedCharDemo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaTest/bin/com/bjsxt/io/byteIO/CopyDir.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaTest/bin/com/bjsxt/io/byteIO/CopyFileDemo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaTest/bin/com/bjsxt/io/byteIO/Demo01.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaTest/bin/com/bjsxt/io/byteIO/Demo02.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaTest/bin/com/bjsxt/io/byteIO/FileUtil.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaTest/bin/com/bjsxt/io/charIO/CopyFileDemo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaTest/bin/com/bjsxt/io/charIO/Demo01.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaTest/bin/com/bjsxt/io/charIO/Demo02.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaTest/bin/com/bjsxt/io/convert/ConverDemo01.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaTest/bin/com/bjsxt/io/convert/ConverDemo02.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaTest/bin/com/bjsxt/io/file/Demo01.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaTest/bin/com/bjsxt/io/file/Demo02.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaTest/bin/com/bjsxt/io/file/Demo03.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaTest/bin/com/bjsxt/io/file/Demo04$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaTest/bin/com/bjsxt/io/file/Demo04.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaTest/bin/com/bjsxt/io/file/Demo05.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaTest/bin/com/bjsxt/io/others/BuffereIn.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaTest/bin/com/bjsxt/io/others/ByteArrayDemo01.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaTest/bin/com/bjsxt/io/others/ByteArrayDemo02.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaTest/bin/com/bjsxt/io/others/DataDemo01.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaTest/bin/com/bjsxt/io/others/DataDemo02.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaTest/bin/com/bjsxt/io/others/Employee.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaTest/bin/com/bjsxt/io/others/ObjectDemo01.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaTest/bin/com/bjsxt/io/others/PrintStreamDemo01.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaTest/bin/com/bjsxt/io/others/RndDemo01.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaTest/bin/com/bjsxt/io/others/SplitFile.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaTest/bin/com/bjsxt/io/others/SystemDemo01.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaTest/bin/com/bjsxt/io/pattern/Amplifier.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaTest/bin/com/bjsxt/io/pattern/App.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaTest/bin/com/bjsxt/io/pattern/Voice.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaTest/bin/com/bjsxt/io/util/CopyFileDemo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaTest/bin/com/bjsxt/io/util/FileUtil.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaTest/bin/com/bjsxt/net/ip/InetDemo01.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaTest/bin/com/bjsxt/net/ip/InetSockeDemo01.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaTest/bin/com/bjsxt/net/tcp/chat/demo01/Client.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaTest/bin/com/bjsxt/net/tcp/chat/demo01/Server.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaTest/bin/com/bjsxt/net/tcp/chat/demo02/Client.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaTest/bin/com/bjsxt/net/tcp/chat/demo02/CloseUtil.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaTest/bin/com/bjsxt/net/tcp/chat/demo02/Receive.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaTest/bin/com/bjsxt/net/tcp/chat/demo02/Send.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaTest/bin/com/bjsxt/net/tcp/chat/demo02/Server.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaTest/bin/com/bjsxt/net/tcp/chat/demo03/Client.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaTest/bin/com/bjsxt/net/tcp/chat/demo03/CloseUtil.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaTest/bin/com/bjsxt/net/tcp/chat/demo03/Receive.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaTest/bin/com/bjsxt/net/tcp/chat/demo03/Send.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaTest/bin/com/bjsxt/net/tcp/chat/demo03/Server$MyChannel.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaTest/bin/com/bjsxt/net/tcp/chat/demo03/Server.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaTest/bin/com/bjsxt/net/tcp/chat/demo04/Client.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaTest/bin/com/bjsxt/net/tcp/chat/demo04/CloseUtil.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaTest/bin/com/bjsxt/net/tcp/chat/demo04/Receive.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaTest/bin/com/bjsxt/net/tcp/chat/demo04/Send.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaTest/bin/com/bjsxt/net/tcp/chat/demo04/Server$MyChannel.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaTest/bin/com/bjsxt/net/tcp/chat/demo04/Server.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaTest/bin/com/bjsxt/net/tcp/socket/Client.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaTest/bin/com/bjsxt/net/tcp/socket/MultiServer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaTest/bin/com/bjsxt/net/tcp/socket/Server.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaTest/bin/com/bjsxt/net/udp/Client.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaTest/bin/com/bjsxt/net/udp/MyClient.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaTest/bin/com/bjsxt/net/udp/MyServer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaTest/bin/com/bjsxt/net/udp/Server.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaTest/bin/com/bjsxt/net/url/URLDemo01.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaTest/bin/com/nius/foundation/IO/BytesStream/CopyFile.class" beforeDir="false" afterPath="$PROJECT_DIR$/../JavaTest/bin/com/nius/foundation/IO/BytesStream/CopyFile.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaTest/bin/com/nius/foundation/IO/BytesStream/ReadFromFile.class" beforeDir="false" afterPath="$PROJECT_DIR$/../JavaTest/bin/com/nius/foundation/IO/BytesStream/ReadFromFile.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaTest/bin/com/nius/foundation/IO/BytesStream/Reader.class" beforeDir="false" afterPath="$PROJECT_DIR$/../JavaTest/bin/com/nius/foundation/IO/BytesStream/Reader.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaTest/bin/com/nius/foundation/IO/BytesStream/WriteToFile.class" beforeDir="false" afterPath="$PROJECT_DIR$/../JavaTest/bin/com/nius/foundation/IO/BytesStream/WriteToFile.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaTest/bin/com/nius/foundation/IO/BytesStream/Writer.class" beforeDir="false" afterPath="$PROJECT_DIR$/../JavaTest/bin/com/nius/foundation/IO/BytesStream/Writer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaTest/bin/com/nius/foundation/IO/CharStream/CopyFile.class" beforeDir="false" afterPath="$PROJECT_DIR$/../JavaTest/bin/com/nius/foundation/IO/CharStream/CopyFile.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaTest/bin/com/nius/foundation/IO/CharStream/ReadFromFile.class" beforeDir="false" afterPath="$PROJECT_DIR$/../JavaTest/bin/com/nius/foundation/IO/CharStream/ReadFromFile.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaTest/bin/com/nius/foundation/IO/CharStream/Test.class" beforeDir="false" afterPath="$PROJECT_DIR$/../JavaTest/bin/com/nius/foundation/IO/CharStream/Test.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaTest/bin/com/nius/foundation/IO/CharStream/WriteToFile.class" beforeDir="false" afterPath="$PROJECT_DIR$/../JavaTest/bin/com/nius/foundation/IO/CharStream/WriteToFile.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaTest/bin/com/nius/foundation/IO/normal/文件创建与删除.class" beforeDir="false" afterPath="$PROJECT_DIR$/../JavaTest/bin/com/nius/foundation/IO/normal/文件创建与删除.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaTest/bin/com/nius/foundation/IO/normal/文件路径.class" beforeDir="false" afterPath="$PROJECT_DIR$/../JavaTest/bin/com/nius/foundation/IO/normal/文件路径.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaTest/bin/com/nius/foundation/IO/util/FileUtil1.class" beforeDir="false" afterPath="$PROJECT_DIR$/../JavaTest/bin/com/nius/foundation/IO/util/FileUtil1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaTest/bin/com/nius/foundation/IO/util/FileUtil2.class" beforeDir="false" afterPath="$PROJECT_DIR$/../JavaTest/bin/com/nius/foundation/IO/util/FileUtil2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaTest/bin/com/nius/foundation/IO/util/WJTools.class" beforeDir="false" afterPath="$PROJECT_DIR$/../JavaTest/bin/com/nius/foundation/IO/util/WJTools.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaTest/bin/com/nius/foundation/IO/字符乱码/Convert1.class" beforeDir="false" afterPath="$PROJECT_DIR$/../JavaTest/bin/com/nius/foundation/IO/字符乱码/Convert1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaTest/bin/com/nius/foundation/IO/字符乱码/Convert2.class" beforeDir="false" afterPath="$PROJECT_DIR$/../JavaTest/bin/com/nius/foundation/IO/字符乱码/Convert2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaTest/bin/com/nius/foundation/IO/文件分割合并/FileSplitMerge.class" beforeDir="false" afterPath="$PROJECT_DIR$/../JavaTest/bin/com/nius/foundation/IO/文件分割合并/FileSplitMerge.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaTest/bin/com/nius/foundation/IO/文件分割合并/IntegerConvert.class" beforeDir="false" afterPath="$PROJECT_DIR$/../JavaTest/bin/com/nius/foundation/IO/文件分割合并/IntegerConvert.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaTest/bin/com/nius/foundation/IO/文件分割合并/Test.class" beforeDir="false" afterPath="$PROJECT_DIR$/../JavaTest/bin/com/nius/foundation/IO/文件分割合并/Test.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaTest/bin/com/nius/foundation/InnerClass/Person1$A.class" beforeDir="false" afterPath="$PROJECT_DIR$/../JavaTest/bin/com/nius/foundation/InnerClass/Person1$A.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaTest/bin/com/nius/foundation/InnerClass/Person1.class" beforeDir="false" afterPath="$PROJECT_DIR$/../JavaTest/bin/com/nius/foundation/InnerClass/Person1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaTest/bin/com/nius/foundation/InnerClass/Person2$A.class" beforeDir="false" afterPath="$PROJECT_DIR$/../JavaTest/bin/com/nius/foundation/InnerClass/Person2$A.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaTest/bin/com/nius/foundation/InnerClass/Person2.class" beforeDir="false" afterPath="$PROJECT_DIR$/../JavaTest/bin/com/nius/foundation/InnerClass/Person2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaTest/bin/com/nius/foundation/InnerClass/Test$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/../JavaTest/bin/com/nius/foundation/InnerClass/Test$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaTest/bin/com/nius/foundation/InnerClass/Test$1ABC.class" beforeDir="false" afterPath="$PROJECT_DIR$/../JavaTest/bin/com/nius/foundation/InnerClass/Test$1ABC.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaTest/bin/com/nius/foundation/InnerClass/Test.class" beforeDir="false" afterPath="$PROJECT_DIR$/../JavaTest/bin/com/nius/foundation/InnerClass/Test.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaTest/bin/com/nius/foundation/Integer/Test.class" beforeDir="false" afterPath="$PROJECT_DIR$/../JavaTest/bin/com/nius/foundation/Integer/Test.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaTest/bin/com/nius/foundation/date/Test.class" beforeDir="false" afterPath="$PROJECT_DIR$/../JavaTest/bin/com/nius/foundation/date/Test.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaTest/bin/com/nius/foundation/exception/Test.class" beforeDir="false" afterPath="$PROJECT_DIR$/../JavaTest/bin/com/nius/foundation/exception/Test.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaTest/bin/com/nius/foundation/file/FileInfos.class" beforeDir="false" afterPath="$PROJECT_DIR$/../JavaTest/bin/com/nius/foundation/file/FileInfos.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaTest/bin/com/nius/foundation/file/PrintFileList$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/../JavaTest/bin/com/nius/foundation/file/PrintFileList$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaTest/bin/com/nius/foundation/file/PrintFileList.class" beforeDir="false" afterPath="$PROJECT_DIR$/../JavaTest/bin/com/nius/foundation/file/PrintFileList.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaTest/bin/com/nius/foundation/file/Test.class" beforeDir="false" afterPath="$PROJECT_DIR$/../JavaTest/bin/com/nius/foundation/file/Test.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaTest/bin/com/nius/foundation/polymorphism/Human.class" beforeDir="false" afterPath="$PROJECT_DIR$/../JavaTest/bin/com/nius/foundation/polymorphism/Human.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaTest/bin/com/nius/foundation/polymorphism/Person.class" beforeDir="false" afterPath="$PROJECT_DIR$/../JavaTest/bin/com/nius/foundation/polymorphism/Person.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaTest/bin/com/nius/foundation/polymorphism/Student.class" beforeDir="false" afterPath="$PROJECT_DIR$/../JavaTest/bin/com/nius/foundation/polymorphism/Student.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaTest/bin/com/nius/foundation/polymorphism/Test.class" beforeDir="false" afterPath="$PROJECT_DIR$/../JavaTest/bin/com/nius/foundation/polymorphism/Test.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaTest/bin/com/nius/foundation/polymorphism/YellowMan.class" beforeDir="false" afterPath="$PROJECT_DIR$/../JavaTest/bin/com/nius/foundation/polymorphism/YellowMan.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaTest/bin/com/nius/foundation/sort/冒泡排序.class" beforeDir="false" afterPath="$PROJECT_DIR$/../JavaTest/bin/com/nius/foundation/sort/冒泡排序.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaTest/bin/com/nius/foundation/tcp/base/MyClient.class" beforeDir="false" afterPath="$PROJECT_DIR$/../JavaTest/bin/com/nius/foundation/tcp/base/MyClient.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaTest/bin/com/nius/foundation/tcp/base/MyServer.class" beforeDir="false" afterPath="$PROJECT_DIR$/../JavaTest/bin/com/nius/foundation/tcp/base/MyServer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaTest/bin/com/nius/foundation/tcp/base/MyServer1.class" beforeDir="false" afterPath="$PROJECT_DIR$/../JavaTest/bin/com/nius/foundation/tcp/base/MyServer1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaTest/bin/com/nius/foundation/tcp/chat/demo1/Client.class" beforeDir="false" afterPath="$PROJECT_DIR$/../JavaTest/bin/com/nius/foundation/tcp/chat/demo1/Client.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaTest/bin/com/nius/foundation/tcp/chat/demo1/Server.class" beforeDir="false" afterPath="$PROJECT_DIR$/../JavaTest/bin/com/nius/foundation/tcp/chat/demo1/Server.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaTest/bin/com/nius/foundation/tcp/chat/demo2/Client$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/../JavaTest/bin/com/nius/foundation/tcp/chat/demo2/Client$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaTest/bin/com/nius/foundation/tcp/chat/demo2/Client$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/../JavaTest/bin/com/nius/foundation/tcp/chat/demo2/Client$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaTest/bin/com/nius/foundation/tcp/chat/demo2/Client.class" beforeDir="false" afterPath="$PROJECT_DIR$/../JavaTest/bin/com/nius/foundation/tcp/chat/demo2/Client.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaTest/bin/com/nius/foundation/tcp/chat/demo2/CloseIOUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/../JavaTest/bin/com/nius/foundation/tcp/chat/demo2/CloseIOUtil.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaTest/bin/com/nius/foundation/tcp/chat/demo2/Server$ClientProxy.class" beforeDir="false" afterPath="$PROJECT_DIR$/../JavaTest/bin/com/nius/foundation/tcp/chat/demo2/Server$ClientProxy.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaTest/bin/com/nius/foundation/tcp/chat/demo2/Server.class" beforeDir="false" afterPath="$PROJECT_DIR$/../JavaTest/bin/com/nius/foundation/tcp/chat/demo2/Server.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaTest/bin/com/nius/foundation/thread/MyThread$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/../JavaTest/bin/com/nius/foundation/thread/MyThread$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaTest/bin/com/nius/foundation/thread/MyThread.class" beforeDir="false" afterPath="$PROJECT_DIR$/../JavaTest/bin/com/nius/foundation/thread/MyThread.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaTest/bin/com/nius/foundation/thread/Rabbit$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/../JavaTest/bin/com/nius/foundation/thread/Rabbit$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaTest/bin/com/nius/foundation/thread/Rabbit.class" beforeDir="false" afterPath="$PROJECT_DIR$/../JavaTest/bin/com/nius/foundation/thread/Rabbit.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaTest/bin/com/nius/foundation/thread/Test.class" beforeDir="false" afterPath="$PROJECT_DIR$/../JavaTest/bin/com/nius/foundation/thread/Test.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaTest/bin/com/nius/foundation/thread/TestThread.class" beforeDir="false" afterPath="$PROJECT_DIR$/../JavaTest/bin/com/nius/foundation/thread/TestThread.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaTest/bin/com/nius/foundation/udp/attachType/MyClient1.class" beforeDir="false" afterPath="$PROJECT_DIR$/../JavaTest/bin/com/nius/foundation/udp/attachType/MyClient1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaTest/bin/com/nius/foundation/udp/attachType/MyServer1.class" beforeDir="false" afterPath="$PROJECT_DIR$/../JavaTest/bin/com/nius/foundation/udp/attachType/MyServer1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaTest/bin/com/nius/foundation/udp/base/MyClient.class" beforeDir="false" afterPath="$PROJECT_DIR$/../JavaTest/bin/com/nius/foundation/udp/base/MyClient.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaTest/bin/com/nius/foundation/udp/base/MyServer.class" beforeDir="false" afterPath="$PROJECT_DIR$/../JavaTest/bin/com/nius/foundation/udp/base/MyServer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaTest/bin/com/nius/server/XMLParser/Person.class" beforeDir="false" afterPath="$PROJECT_DIR$/../JavaTest/bin/com/nius/server/XMLParser/Person.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaTest/bin/com/nius/server/XMLParser/PersonHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/../JavaTest/bin/com/nius/server/XMLParser/PersonHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaTest/bin/com/nius/server/XMLParser/XMLParse.class" beforeDir="false" afterPath="$PROJECT_DIR$/../JavaTest/bin/com/nius/server/XMLParser/XMLParse.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaTest/bin/com/nius/server/demo01/Server01.class" beforeDir="false" afterPath="$PROJECT_DIR$/../JavaTest/bin/com/nius/server/demo01/Server01.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaTest/bin/com/nius/server/servlet/Entity.class" beforeDir="false" afterPath="$PROJECT_DIR$/../JavaTest/bin/com/nius/server/servlet/Entity.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaTest/bin/com/nius/server/servlet/LoginServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/../JavaTest/bin/com/nius/server/servlet/LoginServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaTest/bin/com/nius/server/servlet/Mapping.class" beforeDir="false" afterPath="$PROJECT_DIR$/../JavaTest/bin/com/nius/server/servlet/Mapping.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaTest/bin/com/nius/server/servlet/RegisterServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/../JavaTest/bin/com/nius/server/servlet/RegisterServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaTest/bin/com/nius/server/servlet/Servlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/../JavaTest/bin/com/nius/server/servlet/Servlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaTest/bin/com/nius/server/servlet/WebContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/../JavaTest/bin/com/nius/server/servlet/WebContext.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaTest/bin/com/nius/server/servlet/WebParser.class" beforeDir="false" afterPath="$PROJECT_DIR$/../JavaTest/bin/com/nius/server/servlet/WebParser.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaTest/bin/com/nius/server/servlet/WebParserHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/../JavaTest/bin/com/nius/server/servlet/WebParserHandler.class" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="IgnoredFileRootStore">
+    <option name="generatedRoots">
+      <set>
+        <option value="$PROJECT_DIR$/.idea" />
+      </set>
+    </option>
+  </component>
+  <component name="ProjectId" id="1UPG2pOK9Jvdh4WGK2PlXAjK5aF" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration name="App.testDDL" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="JDBC" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.nius._01jdbc._01jdbc_DDL.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.nius._01jdbc._01jdbc_DDL" />
+      <option name="MAIN_CLASS_NAME" value="com.nius._01jdbc._01jdbc_DDL.App" />
+      <option name="METHOD_NAME" value="testDDL" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.App.testDDL" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="b2b48ab7-34ab-47a2-9f37-ec8f3556037b" name="Default Changelist" comment="" />
+      <created>1575250612530</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1575250612530</updated>
+      <workItem from="1575250620536" duration="147000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>

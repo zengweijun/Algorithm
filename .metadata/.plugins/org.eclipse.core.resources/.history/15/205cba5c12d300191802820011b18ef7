@@ -1,0 +1,22 @@
+package com.nius.IO.CharStream;
+
+import java.io.File;
+
+public class ReadFromFile {
+	public static void main(String[] args) {
+		readFile();
+	}
+	
+	public static void readFile() {
+		String parent = "./src/com/nius/IO/test";
+		File f1 = new File(parent, "test.docx");
+		
+		// 字符流使用Reader
+		ReadFromFile reader = null;
+		
+		reader = new ReadFromFile();
+		
+		
+		
+	}
+}

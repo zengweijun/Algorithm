@@ -1,0 +1,47 @@
+package com.nius.IO.CharStream;
+
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+
+/**
+ * 注意：字符流FileReader、FileWriter只能拷贝纯文本
+ * @author nius
+ *
+ */
+public class CopyFile {
+	public static void main(String[] args) {
+		String path = "./src/com/nius/IO/test";
+		File src = new File(path, "test.rtf");
+		File dest = new File(path, "test123.rtf");
+		
+		FileReader fileReader = null;
+		FileWriter fileWriter = null;
+		try {
+			fileReader = new FileReader(src);
+			fileWriter = new FileWriter(dest, true);
+			
+			char[] chars = new char[1024];
+			while (-1 != (fileReader.read(chars))) {
+				fileWriter.write(chars);
+			}
+			fileWriter.flush();
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				if (null != fileWriter) { fileWriter.close(); }
+				if (null != fileReader) { fileReader.close(); }
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		
+		
+	}
+}

@@ -1,0 +1,38 @@
+1575198439076	Rename package 'com.nius.连接数据库'
+1575205865332	Rename package 'com.nius._01连接数据库'
+1575205903038	Rename package 'com.nius._01jdbc基本操作'
+1575206230415	Delete element
+1575210850459	Delete element
+1575250352333	Copy packages
+1575250367696	Delete elements
+1575250387577	Copy package
+1575250394388	Delete element
+1575250505280	Delete element
+1575251852993	Delete element
+1575251913256	Delete element
+1575251928397	Delete element
+1575252275620	Delete element
+1575252321475	Delete element
+1575256961630	Copy package
+1575256979284	Delete element
+1575256998198	Copy package
+1575257017954	Delete element
+1575257081863	Copy package
+1575257092450	Delete element
+1575257325267	Rename package 'com.nius.dao_refacor1.daoUtils'
+1575258380610	Rename source folder 'db.properties'
+1575258945595	Rename type 'DaoUtils'
+1575258977182	Copy package
+1575258984686	Delete element
+1575259000776	Copy package
+1575259019683	Delete element
+1575279848761	Rename package 'com.nius.insertAlsoGetPk'
+1575281838672	Copy file
+1575282740423	Rename package 'com.nius.transaction'
+1575285714579	Copy file
+1575293272612	Copy compilation unit
+1575294150135	Move compilation unit
+1575298126548	Delete element
+1575298815851	Copy compilation unit
+1575300072261	Delete element
+1575300089684	Rename package 'com.nius.dao_refacor3'

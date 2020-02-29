@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="ExternalProjectImportWizard">
+		<item value="false" key="WizardProjectsImportPage.STORE_NESTED_PROJECTS"/>
+		<item value="false" key="WizardProjectsImportPage.STORE_COPY_PROJECT_ID"/>
+		<item value="false" key="WizardProjectsImportPage.STORE_ARCHIVE_SELECTED"/>
+		<list key="WizardProjectsImportPage.STORE_DIRECTORIES">
+			<item value="/Users/nius/Documents/Algorithm/JavaTest"/>
+			<item value="/Users/nius/Desktop/数据结构/day13/代码/08-红黑树"/>
+			<item value="/Users/nius/Desktop/数据结构/day11/代码/08-红黑树"/>
+			<item value="/Users/nius/Desktop/数据结构/day09/代码/06-二叉搜索树"/>
+			<item value="/Users/nius/Desktop/数据结构/day09/代码/06-二叉搜索树2"/>
+			<item value="/Users/nius/Desktop/数据结构/day10/代码/07-AVL树"/>
+			<item value="/Users/nius/Desktop/数据结构/day02/代码/02-动态数组"/>
+			<item value="/Users/nius/Desktop/数据结构/day01(4.14直播)/代码/02-动态数组"/>
+		</list>
+		<list key="WizardProjectsImportPage.STORE_ARCHIVES">
+			<item value=""/>
+		</list>
+	</section>
+	<section name="NewWizardAction">
+		<item value="org.eclipse.jdt.ui.wizards.JavaProjectWizard" key="NewWizardSelectionPage.STORE_SELECTED_ID"/>
+		<list key="NewWizardSelectionPage.STORE_EXPANDED_CATEGORIES_ID">
+			<item value="org.eclipse.jdt.ui.java"/>
+		</list>
+	</section>
+	<section name="BasicNewProjectResourceWizard">
+	</section>
+</section>

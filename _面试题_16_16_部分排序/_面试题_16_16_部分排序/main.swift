@@ -79,6 +79,7 @@ class Solution {
         return [first, last]
     }
     
+    // 整合逆序到同一个for循环
     func subSort1(_ array: [Int]) -> [Int] {
         // 说明中表示范围 0 <= len(array) <= 1000000，数组长度有可能是0，需要判断边界
         if array.count == 0 {
@@ -204,3 +205,6 @@ print(Solution().subSort([4, 5, 4, 3, 2, 6, 7, 2, 3]))
 
 print(Solution().subSort1([1, 5, 4, 3, 2, 6, 7, 2, 8]))
 print(Solution().subSort1([4, 5, 4, 3, 2, 6, 7, 2, 3]))
+
+print(Solution().subSort2([1, 5, 4, 3, 2, 6, 7, 2, 8]))
+print(Solution().subSort2([4, 5, 4, 3, 2, 6, 7, 2, 3]))

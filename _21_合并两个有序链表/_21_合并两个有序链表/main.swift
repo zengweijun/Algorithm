@@ -36,6 +36,18 @@ public class ListNode {
         }
         print("nil")
     }
+    
+    public static func linkedList(_ nums: [Int]) -> ListNode? {
+        let dummyHead: ListNode? = ListNode(0)
+        var cur = dummyHead
+        
+        for i in 0..<nums.count {
+            cur?.next = ListNode(nums[i])
+            cur = cur?.next
+        }
+        
+        return dummyHead?.next
+    }
 }
     
 class Solution {
@@ -124,39 +136,12 @@ class Solution {
 
 // 迭代
 do {
-    let node13 = ListNode(4)
-    let node12 = ListNode(2)
-    node12.next = node13
-    let node11 = ListNode(1)
-    node11.next = node12
-
-
-    let node23 = ListNode(4)
-    let node22 = ListNode(3)
-    node22.next = node23
-    let node21 = ListNode(1)
-    node21.next = node22
-
-    let head = Solution().mergeTwoLists(node11, node21)
+    let head = Solution().mergeTwoLists(ListNode.linkedList([1, 2, 4]), ListNode.linkedList([1, 3, 4]))
     head?.show()
 }
  
 // 递归
 do {
-    let node13 = ListNode(4)
-    let node12 = ListNode(2)
-    node12.next = node13
-    let node11 = ListNode(1)
-    node11.next = node12
-
-
-    let node23 = ListNode(4)
-    let node22 = ListNode(3)
-    node22.next = node23
-    let node21 = ListNode(1)
-    node21.next = node22
-
-
-    let head = Solution().mergeTwoLists1(node11, node21)
+    let head = Solution().mergeTwoLists1(ListNode.linkedList([1, 2, 4]), ListNode.linkedList([1, 3, 4]))
     head?.show()
 }

@@ -46,6 +46,7 @@ public class ListNode {
         }
         return head?.next
     }
+    
 }
 
 class Solution {

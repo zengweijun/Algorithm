@@ -88,6 +88,32 @@ class Solution {
                 
         return newHead
     }
+    
+    // 依次将后边节点移动到第一个
+    func reverseList2(_ head: ListNode?) -> ListNode? {
+        // 依次将后边节点移动到第一个
+        // 1->2->3->4->5 虚拟头 0->1->2->3->4->5
+        // 定位到头head = 0, cur = 1, 将cur的next 2移动到头 0->2->1->3->4->5
+        // 此时head = 0, cur = 1, 将cur的next 3移动到头 0->3->2->1->4->5
+        // 如此往复即可完成
+        if head == nil || head?.next == nil {
+            return head
+        }
+        
+        let dummy = ListNode(0)
+        dummy.next = head
+        // 依次将后边节点移动到第一个位置即可
+        let cur = dummy.next
+        // 这里cur无需cur = cur.next，实际上向头部插入东西，cur就已经会自动后移
+        while cur?.next != nil { // cur后边没有东西了就停止
+            let next = cur?.next        // 先拿到cur的下一个
+            cur?.next = cur?.next?.next // 绕过(删除)cur的下一个
+            next?.next = dummy.next     // 将cur的下一个移动到最前边1
+            dummy.next = next           // 将cur的下一个移动到最前边2
+        }
+        
+        return dummy.next
+    }
 }
 
 
@@ -96,14 +122,14 @@ do {
     do {
         let head1 = ListNode.linkedList([1, 2, 3, 4, 5])
         head1?.show()
-        let head2 = Solution().reverseList(head1)
+        let head2 = Solution().reverseList2(head1)
         head2?.show()
     }
     print("-----------------------")
     do {
         let head1 = ListNode.linkedList([1, 2, 3, 4, 5])
         head1?.show()
-        let head2 = Solution().reverseList1(head1)
+        let head2 = Solution().reverseList2(head1)
         head2?.show()
     }
 }

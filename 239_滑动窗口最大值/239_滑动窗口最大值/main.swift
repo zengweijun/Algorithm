@@ -42,6 +42,8 @@ import Foundation
 
 class Solution {
     // 使用双端队列（队列中的值从大到小排列）
+    // 时间：O(n)
+    // 这里有一篇很好的帖子可以帮助理解 https://zhuanlan.zhihu.com/p/34456480
     func maxSlidingWindow(_ nums: [Int], _ k: Int) -> [Int] {
         // 滑块右边从0开始，滑块每次滑动，就将滑块最右边的值与队尾最后一个值比较
         //      如果队尾的值比的当前滑块最右边的值大，则将该值入队
@@ -112,5 +114,4 @@ do {
     print(Solution().maxSlidingWindow([1,3,-1,-3,5,3,6,7], 3))
     print(Solution().maxSlidingWindow([1,3,-1,-3,5,3,6,7], 2))
     print(Solution().maxSlidingWindow([1,3,-1,-3,5,3,6,7], 1))
-    
 }

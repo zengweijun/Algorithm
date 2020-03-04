@@ -61,10 +61,101 @@ class Solution {
         
         return result
     }
+    
+    // 改进，无需 rightMaxIndexs
+    func dailyTemperatures1(_ T: [Int]) -> [Int] {
+        // 边界：空数组算法表现安全
+        var stack = [Int]() // 单点递减栈
+        
+        let count = T.count
+        var result = [Int](repeating: 0, count: count)
+        
+        for i in 0..<count {
+            let value = T[i]
+            while let topElement = stack.last, value > T[topElement] {
+                // i位置元素比之前元素大，则i是之前元素的右边第一个更大元素，可以求的之前元素升温间隔
+                // 计算之前元素的升温间隔
+                result[topElement] = i - stack.removeLast()
+            }
+                
+            // 入栈记录当前元素
+            stack.append(i)
+        }
+        return result
+     }
+    
+    
+    // 改进，无需 rightMaxIndexs，逆袭遍历，代码没有方法二简洁，不过也是一种思路
+    // 逆向遍历数组，并将遍历到的元素索引注册到栈
+    // 每次遍历到一个元素，就栈中找到比它大的元素，使用该元素索引-当前i即可
+    func dailyTemperatures2(_ T: [Int]) -> [Int] {
+        // 边界：空数组算法表现安全
+        let count = T.count
+        var stack = [Int]()
+        var result = [Int](repeating: 0, count: count)
+        for i in stride(from: count - 1, to: -1, by: -1) {
+            // 检查栈，将栈中比当前元素更小的元素索引删除
+            // 因为要找的是比之更大的第一个数，所以小的没必要保留，而该操作不会影响更前边的元素
+            // 相等也删掉，因为相等不算右边更大的数
+            // 这里事实上也是一个单调栈
+            while let topElement = stack.last, T[topElement] <= T[i] {
+                stack.removeLast()
+            }
+            
+            // 来到这里，栈是空的 或者 栈中存在元素更大
+            if let topElement = stack.last {
+                // 栈中存在元素更大，栈顶元素一定是当前元素右边第一个更大的数的索引
+                result[i] = topElement - i // 计算距离
+            }
+            //else { // 栈是空的
+                // 右边没有更大的元素，初始化数组默认就是0
+                // result[i] = 0
+            //}
+            stack.append(i) // 注册当前元素
+        }
+        return result
+    }
+    
+    // 逆序遍历
+    func dailyTemperatures3(_ T: [Int]) -> [Int] {
+        // 边界：空数组算法表现安全
+        let count = T.count
+        var result = [Int](repeating: 0, count: count)
+        result[count - 1] = 0 // 最后一个默认为0
+        
+        // 从倒数第二个开始寻找
+        for i in stride(from: count - 2, to: -1, by: -1) {
+            if T[i] < T[ i+1 ] {
+                result[i] = 1
+                continue
+            }
+            
+            // 下一个不比它大，就找它的下一个最大的第一个
+            var rightMaxIndex = (i + 1) + result[ i+1 ]
+            
+            // 注意：这里遇到某一个T[rightMaxIndex] == 0，说明T[rightMaxIndex]已经是后半部分数组所有值中的最大值了，或者说已经结尾了
+            while result[rightMaxIndex] != 0 && T[i] >= T[rightMaxIndex] {
+                rightMaxIndex += result[rightMaxIndex]
+            }
+            
+            // rightMaxIndex指向末尾(但末尾不是更大的值)，或者指向一个更大的值
+            result[i] =  T[i] >= T[rightMaxIndex] ? 0 : rightMaxIndex - i
+        }
+        return result
+    }
 }
 
 do {
     //    [73, 74, 75, 71, 69, 72, 76, 73]
     // -->[ 1,  1,  4,  2,  1,  1,  0,  0]
-    print(Solution().dailyTemperatures([73, 74, 75, 71, 69, 72, 76, 73]))
+//    print(Solution().dailyTemperatures([73, 74, 75, 71, 69, 72, 76, 73]))
+//    print(Solution().dailyTemperatures1([73, 74, 75, 71, 69, 72, 76, 73]))
+//    print(Solution().dailyTemperatures2([73, 74, 75, 71, 69, 72, 76, 73]))
+//    print(Solution().dailyTemperatures3([73, 74, 75, 71, 69, 72, 76, 73]))
+    
+
+//    print(Solution().dailyTemperatures([34,80,80,34,34,80,80,80,80,34]))
+//    print(Solution().dailyTemperatures3([34,80,80,34,34,80,80,80,80,34]))
+    
+    
 }

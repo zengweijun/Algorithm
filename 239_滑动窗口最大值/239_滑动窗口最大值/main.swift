@@ -41,6 +41,7 @@ import Foundation
  */
 
 class Solution {
+    // 推荐法
     // 使用双端队列（队列中的值从大到小排列）
     // 时间：O(n)
     // 这里有一篇很好的帖子可以帮助理解 https://zhuanlan.zhihu.com/p/34456480
@@ -104,16 +105,51 @@ class Solution {
         return maxes
     }
     
-    
+    // 记忆法（该算法最坏时间复杂度O(n*k)），有运气成分
+    // 虽然在LeetCode上，该算法表现更好，但综合评价不一定比方法1好，得看具体应用场景
+    func maxSlidingWindow2(_ nums: [Int], _ k: Int) -> [Int] {
+        
+        // 边界条件
+        let numsCount = nums.count
+        if numsCount < 2 || k < 2 {
+            return nums
+        }
+        
+        var maxes = [Int](repeating: 0, count: numsCount - k + 1)
+        let maxesCount = maxes.count
+        
+        // 先找到前k个中最大值，然后不断移动滑块进行判断
+        var maxIndex = 0
+        for i in 1..<k {
+            if nums[i] > nums[maxIndex] {
+                maxIndex = i
+            }
+        }
+        
+        for left in 0..<maxesCount {
+            let right = left + k - 1
+            
+            // 先判断当前maxIndex是否处于滑块内，如果是，设置最大值，然后滑动滑块
+            if maxIndex < left { // 不在滑块内，重新计算滑块内的最大值
+                maxIndex = left
+                for i in (left+1)...right { if nums[i] > nums[maxIndex] { maxIndex = i } }
+            } else { // 在滑块内，和新进的元素比较
+                if nums[right] > nums[maxIndex] { maxIndex = right }
+            }
+            maxes[left] = nums[maxIndex]
+        }
+        
+        return maxes
+    }
     
     // 使用动态规划解决
-    func maxSlidingWindow1(_ nums: [Int], _ k: Int) -> [Int] {
+    func maxSlidingWindow3(_ nums: [Int], _ k: Int) -> [Int] {
         return nums
     }
 }
 
 do {
-    print(Solution().maxSlidingWindow([1,3,-1,-3,5,3,6,7], 3))
-    print(Solution().maxSlidingWindow([1,3,-1,-3,5,3,6,7], 2))
-    print(Solution().maxSlidingWindow([1,3,-1,-3,5,3,6,7], 1))
+    print(Solution().maxSlidingWindow2([1,3,-1,-3,5,3,6,7], 3))
+    print(Solution().maxSlidingWindow2([1,3,-1,-3,5,3,6,7], 2))
+    print(Solution().maxSlidingWindow2([1,3,-1,-3,5,3,6,7], 1))
 }

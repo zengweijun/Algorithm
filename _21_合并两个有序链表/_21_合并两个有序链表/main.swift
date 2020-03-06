@@ -55,67 +55,42 @@ class Solution {
     func mergeTwoLists(_ l1: ListNode?, _ l2: ListNode?) -> ListNode? {
         // 后边涉及到强制解包，需要判定nil
         // 任何一个为空，直接返回另一个
-        if l1 == nil {
-            return l2
-        }
-        if l2 == nil {
-            return l1
-        }
+        if l1 == nil { return l2 }
+        if l2 == nil { return l1 }
         
         var cur1 = l1
         var cur2 = l2
-        var head: ListNode?  = nil
-        var cur: ListNode?  = nil
         
-        // 先确定新链表头部
-        if cur1!.val < cur2!.val {
-            head = cur1
-            cur1 = cur1?.next
-        } else {
-            head = cur2
-            cur2 = cur2?.next
-        }
-        cur = head
+        let dummy: ListNode?  = ListNode(0)
+        var tail = dummy
         
         // 由于两个量表长短和大小都未知，因此不能预测谁先结束，所以两个链表都进入循环控制条件
         while cur1 != nil && cur2 != nil {
             if cur1!.val < cur2!.val {
-                cur?.next = cur1
+                tail?.next = cur1
                 cur1 = cur1?.next
             } else {
-                cur?.next = cur2
+                tail?.next = cur2
                 cur2 = cur2?.next
             }
-            cur = cur?.next
+            tail = tail?.next
+        }
+
+        // 找到还未结束的那一条链表 接在后边
+        if cur1 != nil {
+            tail?.next = cur1
+        } else {
+            tail?.next = cur2
         }
         
-        // 如果cur1还没结束，直接将其接在新链表尾部
-        while cur1 != nil {
-            cur?.next = cur1
-            cur1 = cur1?.next
-            cur = cur?.next
-        }
-        
-        // 如果cur2还没结束，直接将其接在新链表尾部
-        while cur2 != nil {
-            cur?.next = cur2
-            cur2 = cur2?.next
-            cur = cur?.next
-        }
-        
-        return head
+        return dummy?.next
     }
     
     // 递归解法(只需呀考虑函数返回结果)
     func mergeTwoLists1(_ l1: ListNode?, _ l2: ListNode?) -> ListNode? {
         // 递归基
-        if l1 == nil && l2 == nil {
-            return nil
-        } else if l1 == nil {
-            return l2
-        } else if l2 == nil {
-            return l1
-        }
+        if l1 == nil { return l2 }
+        if l2 == nil { return l1 }
         
         // 以下每个递归函数都会执行的逻辑
         

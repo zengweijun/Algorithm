@@ -12,14 +12,14 @@ import Foundation
  合并 k 个排序链表，返回合并后的排序链表。请分析和描述算法的复杂度。
 
  示例:
-
- 输入:
- [
+ ------------------------------------------------
+ 输入: [
    1->4->5,
    1->3->4,
    2->6
  ]
  输出: 1->1->2->3->4->4->5->6
+ ------------------------------------------------
 
  来源：力扣（LeetCode）
  链接：https://leetcode-cn.com/problems/merge-k-sorted-lists
@@ -72,7 +72,7 @@ struct PriorityQueue<E: Comparable> {
     private var minHeap = false
     private var elements: [E] = []
     
-    var isMinHeap: Bool { return minHeap }
+    var isMinHeap: Bool { minHeap }
     
     init() { }
     init(minHeap: Bool) {
@@ -423,22 +423,70 @@ class Solution {
     func mergeKLists5(_ lists: [ListNode?]) -> ListNode? {
         // 分治策略 O(n * logk)
         // 该方法比较次数减少，比如第一条链表0号位置，比较了logk次
-        // 1、2、3、4、5、6、7、8 链表
-        // 1 = [1、2]  3 = [3、4]  5 = [5、5]  7 = [7、8]
+        // 1、2、3、4、5、6、7、8 链表                       --> step = 1
+        // 1 = [1、2]  3 = [3、4]  5 = [5、6]  7 = [7、8]  --> step = 2
+        // 1 = [1、3]  5 = [5、7]                         --> step = 4
         // 1 = [1、5] 最终全部合并到1上
         // 数据规模：n，合并次数（二叉树高度）logk --> O(n*logk)
         
-        if lists.count == 0 { return nil }
-        if lists.count == 1 { return lists[0] }
+        // 合并两个有序链表，递归
+        func merge2List(_ head1: ListNode?, _ head2: ListNode?) -> ListNode? {
+            if head1 === nil { return head2 }
+            if head2 === nil { return head1 }
+            
+            // 指向小的一条的头，然后让该链表后边的部分与另一条合并后接在该头后边
+            var head: ListNode? = nil
+            if head1!.val < head2!.val {
+                head = head1
+                head?.next = merge2List(head1?.next, head2)
+            } else {
+                head = head2
+                head?.next = merge2List(head2?.next, head1)
+            }
+            return head
+        }
         
+        /** 0 1 2 3 4 5 6 7 八条链表步骤
+         一轮：step = 1、index = index + step = index + 1
+            [0 = 0+1]、[2 = 2+3]、[4 = 4+5]、[6 = 6+7]
+            
+            下一个目标index = index + 2 = index + 2*step
+            step = 2 = 1 * 2 = step * 2
+         
+         二轮：step = 2、index = index + step
+            [0 = 0+2]、[4 = 4+6]
+         
+            下一个目标index = index + 4 = index + 2*step
+            step = 4 = 2 * 2 = step * 2
+         
+         三轮：step = 4、index = index + step
+            [0 = 0+4] --> 最终结果在0中
+         
+            下一个目标index = index + 4 = index + 2*step
+            step = 8 = 4 * 2 = step * 2
+         
+         综上：分治策略中，由于每次总数都是2倍数量的减少，因此移动步数也是2倍数量的增加
+            1、一轮中每次index合并对象为 index+step，即lists[index] = merge2List(index, index+step)
+            2、一轮中每次index移动步数为 index+2*step (由于每次合并两个step，因此需要跳动两个step)
+            3、下一轮步数增加幅度为 2*step (由于每次合并两个step，因此下一轮中step要加倍)
+         */
         
-        let dummy: ListNode? = ListNode(0)
-        var tail = dummy
+        var lists = lists // Copy On Write
+        let count = lists.count
+        if count == 0 { return nil }
+        if count == 1 { return lists[0] }
         
-        
-        return dummy?.next
+        var step = 1
+        while step < count {
+            var index = 0
+            while index + step < count {
+                lists[index] = merge2List(lists[index], lists[index + step])
+                index += step << 1 // 由于合并了两个step距离，因此需要移动两个step
+            }
+            step = step << 1 // 由于合并后，每次都会空出一个step，因此下一轮中step步需要加倍才行
+        }
+        return lists[0]
     }
-    
 }
 
 do {
@@ -462,8 +510,8 @@ do {
 //        }
 //    }
     
-    do {
-        // 遍历k条链表法
+//    do {
+//        // 遍历k条链表法
 //        do {
 //            let h1 = ListNode.linkedList([1, 4, 5])
 //            let h2 = ListNode.linkedList([1, 3, 4])
@@ -480,7 +528,7 @@ do {
 //            let h = Solution().mergeKLists2([h1, h2])
 //            h?.show()
 //        }
-    }
+//    }
         
 //    do {
 ////        // 逐一两两合并链表
@@ -500,10 +548,9 @@ do {
 //            let h = Solution().mergeKLists3([h1, h2])
 //            h?.show()
 //        }
+//
 //    }
     
-
-            
 //    do {
 //    // 使用优先级队列（小顶堆）
 //        do {
@@ -523,9 +570,43 @@ do {
 //            h?.show()
 //        }
 //    }
-
+    
+//    do {
+//    // 使用优先级队列（小顶堆）
+//        do {
+//            let h1 = ListNode.linkedList([1, 4, 5])
+//            let h2 = ListNode.linkedList([1, 3, 4])
+//            let h3 = ListNode.linkedList([2, 6])
+//            // 1->1->2->3->4->4->5->6
+//            let h = Solution().mergeKLists5([h1, h2, h3])
+//            h?.show()
+//        }
+//
+//        do {
+//            let h1 = ListNode.linkedList([-2,-2])
+//            let h2 = ListNode.linkedList([-3])
+//            // -3-->-2-->-2
+//            let h = Solution().mergeKLists5([h1, h2])
+//            h?.show()
+//        }
+//    }
+    
     do {
-    // 使用优先级队列（小顶堆）
+        
+        // 分治策略
+        do {
+            let h1 = ListNode.linkedList([5])
+            let h2 = ListNode.linkedList([3])
+            let h3 = ListNode.linkedList([4])
+            let h4 = ListNode.linkedList([2])
+            let h5 = ListNode.linkedList([1])
+            let h6 = ListNode.linkedList([6])
+            let h7 = ListNode.linkedList([6])
+            let h8 = ListNode.linkedList([8])
+            let h = Solution().mergeKLists5([h1, h2, h3, h4, h5, h6, h7, h8])
+            h?.show()
+        }
+
         do {
             let h1 = ListNode.linkedList([1, 4, 5])
             let h2 = ListNode.linkedList([1, 3, 4])
@@ -534,15 +615,5 @@ do {
             let h = Solution().mergeKLists5([h1, h2, h3])
             h?.show()
         }
-
-        do {
-            let h1 = ListNode.linkedList([-2,-2])
-            let h2 = ListNode.linkedList([-3])
-            // -3-->-2-->-2
-            let h = Solution().mergeKLists5([h1, h2])
-            h?.show()
-        }
     }
-        
-    
 }

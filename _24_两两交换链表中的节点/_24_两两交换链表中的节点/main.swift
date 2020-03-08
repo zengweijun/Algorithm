@@ -50,8 +50,8 @@ public class ListNode {
 }
 
 class Solution {
-    // 时间：O(n)，此题还可以用递归
     func swapPairs1(_ head: ListNode?) -> ListNode? {
+        // 时间：O(n)，此题还可以用递归
         if head === nil || head?.next === nil {
             return head
         }
@@ -80,26 +80,37 @@ class Solution {
         return dummy?.next
     }
     
-    // 递归（事实上和单链表反转同样逻辑，只不过这里将两个节点视为一个对象）
     func swapPairs2(_ head: ListNode?) -> ListNode? {
+        // O(n)
+        // 递归（事实上和单链表反转同样逻辑，只不过这里将两个节点视为一个对象）
         if head === nil || head?.next === nil {
             return head
         }
         
-        var cur = head
-        // 这里要想追求LeetCode时间极致降低，可以去掉虚拟头节点
-        let dummy: ListNode? = ListNode(0)
-        var tail = dummy
+        // 1.先将第三个节点之后链表执行两两反转逻辑
+        let lastHead = swapPairs2(head?.next?.next)
         
-        tail?.next = nil
+        // 2.记录第二节点，作为头部返回。将头两个节点交换后，之后将第三个节点之后反转的链表接在后边
+        let newHead = head?.next
+        head?.next?.next = head
+        head?.next = lastHead
         
-        return dummy?.next
+        // 之前记录的第二个节点作为头返回
+        return newHead
     }
 }
 
 do {
-    let h = ListNode.linkedList([1, 2, 3])
-    h?.show()
-    let result = Solution().swapPairs1(h)
-    result?.show()
+    do {
+        let h = ListNode.linkedList([1, 2, 3])
+        h?.show()
+        let result = Solution().swapPairs1(h)
+        result?.show()
+    }
+    do {
+        let h = ListNode.linkedList([1, 2, 3, 4])
+        h?.show()
+        let result = Solution().swapPairs2(h)
+        result?.show()
+    }
 }

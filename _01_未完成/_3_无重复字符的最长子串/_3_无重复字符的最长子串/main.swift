@@ -33,45 +33,48 @@ import Foundation
 
 class Solution {
     func lengthOfLongestSubstring(_ s: String) -> Int {
-        // 使用滑动窗口，并用set记录是否存在重复值
+        // O(n * maxLength)
+        // 暴力解法，使用set辅助检查是否重复
         // 滑动窗口使用双指针 left/right
+//        func charAt(_ s: String, _ index: Int) -> Character {
+//            return s[s.index(s.startIndex, offsetBy: index)]
+//        }
         
-        let count = s.count
-        if count == 0 { return 0 }
-        if count == 1 { return 1 }
+        let chars = s.map{$0}
+        let count = chars.count
+        if count <= 1 { return count }
         
-        func charAt(_ s: String, _ index: Int) -> Character {
-            return s[s.index(s.startIndex, offsetBy: index)]
-        }
-        
+        // 默认字符串第一个字符为 无重复最大子串，长度为1（最少都有一个字符：首字符）
+        // 但是检查的时候，第一轮需要将第0个字符包含进去(即作为左边界)，比如abcd，如果不包含首字符有可能漏掉
         var maxLength = 1
-        
-        // var subLength = 1
-        var left = 0  // 遇到重复字符，subLength = right - left，left++，right++，更新maxLength
-        var right = 1 // 没有遇到重复字符，right++
-        var set: Set<Character> = [charAt(s, left)] // 检查重复字符O(1)
-        while right < count {
-            let char = charAt(s, right)
-            if set.contains(char) {
-                let subLength = right - left
-                if maxLength < subLength {
-                    maxLength = subLength
+        // 右边界[left, right]
+        for left in 0..<(count-1) { // O(n)
+            var set: Set<Character> = [chars[left]] // 将首字符加入集合
+            
+            var right = left + 1
+            while right < count {
+                let char = chars[right]
+                if set.contains(char) {
+                    break // 退出内层循环，继续下一轮比较
                 }
-                left += 1
-                right += 1
-            } else {
+                // 没有发现重复字符，记录当前字符，继续检查下一个字符是否可行
                 set.insert(char)
                 right += 1
             }
-        }
-        if right - left > maxLength {
-            maxLength = right - left
+            
+            // 来到这里，要么是出现了重复字符，要么是到达了尾巴，无论是哪一种情况
+            // 无重复最大子串都是 right - left，更新maxLength
+            let stepLen = right - left
+            if stepLen > maxLength {
+                maxLength = stepLen
+            }
         }
         return maxLength
     }
 }
 
 do {
+    print("au       --> 2：" ,Solution().lengthOfLongestSubstring("au"))
     print("abcabcbb --> 3：" ,Solution().lengthOfLongestSubstring("abcabcbb"))
     print("bbbbb    --> 1：" ,Solution().lengthOfLongestSubstring("bbbbb"))
     print("pwwkew   --> 3：" ,Solution().lengthOfLongestSubstring("pwwkew"))

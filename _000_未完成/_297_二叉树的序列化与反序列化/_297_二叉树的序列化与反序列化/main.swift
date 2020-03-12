@@ -43,7 +43,8 @@ public class TreeNode {
     }
 }
 
-class Codec {
+// 层序遍历二叉树（BFS：广度优先）
+class Codec_BFS {
     // Encodes a tree to a single string.
     func serialize(_ root: TreeNode?) -> String {
         guard let root = root else { return "" }
@@ -99,6 +100,24 @@ class Codec {
     }
 }
 
+
+// 前中后序遍历二叉树（BFS：深度优先）
+class Codec_DFS {
+    // Encodes a tree to a single string.
+    func serialize(_ root: TreeNode?) -> String {
+        guard let root = root else { return "" }
+        
+        return ""
+    }
+
+    // Decodes your encoded data to tree.
+    func deserialize(_ data: String) -> TreeNode? {
+        return nil
+    }
+}
+
+
+
 do {
     do {
         let root = TreeNode(1)
@@ -106,20 +125,27 @@ do {
         root.right = TreeNode(3)
         root.right?.left = TreeNode(4)
         root.right?.right = TreeNode(5)
-        let data = Codec().serialize(root)
+        let data = Codec_BFS().serialize(root)
         print(data)
-        let newRoot = Codec().deserialize(data)
+        let newRoot = Codec_BFS().deserialize(data)
         //print(newRoot as Any)
-        let data1 = Codec().serialize(newRoot)
+        let data1 = Codec_BFS().serialize(newRoot)
         print(data1)
     }
-//    do {
-//        let root = TreeNode(1)
-//        root.left = TreeNode(2)
-//        root.right = TreeNode(3)
-//        root.left?.left = TreeNode(4)
-//        root.left?.right = TreeNode(5)
-//        print(Codec().serialize(root))
-//    }
+    
+    
+    do {
+        let root = TreeNode(1)
+        root.left = TreeNode(2)
+        root.right = TreeNode(3)
+        root.right?.left = TreeNode(4)
+        root.right?.right = TreeNode(5)
+        let data = Codec_DFS().serialize(root)
+        print(data)
+        let newRoot = Codec_DFS().deserialize(data)
+        //print(newRoot as Any)
+        let data1 = Codec_DFS().serialize(newRoot)
+        print(data1)
+    }
 }
 

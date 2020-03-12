@@ -8,14 +8,17 @@ import java.util.Queue;
 
 // https://leetcode-cn.com/problems/serialize-and-deserialize-binary-tree/
 
-public class _297_二叉树的序列化与反序列化 {
+/************************************
+***** 这里采用层序遍历序列化方式 ********
+*************************************/
+class _297_二叉树的序列化与反序列化1 {
     // Encodes a tree to a single string.
     public String serialize(TreeNode root) {
         if (root == null) return null;
         Queue<TreeNode> queue = new LinkedList<>();
         queue.offer(root);
 
-        StringBuffer sb = new StringBuffer();
+        StringBuilder sb = new StringBuilder();
         while (!queue.isEmpty()) {
             TreeNode node = queue.poll();
             if (node != null) {
@@ -62,18 +65,91 @@ public class _297_二叉树的序列化与反序列化 {
     }
 
     public static void main(String[] args) {
-        _297_二叉树的序列化与反序列化 o = new _297_二叉树的序列化与反序列化();
+        _297_二叉树的序列化与反序列化1 o = new _297_二叉树的序列化与反序列化1();
         TreeNode root = new TreeNode(1);
         root.left = new TreeNode(2);
         root.right = new TreeNode(3);
         root.right.left = new TreeNode(4);
         root.right.right = new TreeNode(5);
         String data = o.serialize(root);
-        System.out.println(data);
+        System.out.println(1 + " ==>:" + data);
         TreeNode newRoot = o.deserialize(data);
         String data1 = o.serialize(newRoot);
-        System.out.println(data1);
+        System.out.println(1 + " ==>:" + data1);
 
+    }
+}
+
+/************************************
+ ***** 这里采用先序遍历序列化方式 ********
+ *************************************/
+class _297_二叉树的序列化与反序列化2 {
+    // 先序遍历比较容易反序列化
+    public String serialize(TreeNode root) {
+        if (root == null) return null;
+        StringBuilder sb = new StringBuilder();
+        serialize(root, sb);
+        return sb.toString();
+    }
+    public void serialize(TreeNode root, StringBuilder sb) {
+        if (root == null) {
+            sb.append("#,");
+        } else {
+            sb.append(String.valueOf(root.val)).append(",");
+            serialize(root.left, sb);
+            serialize(root.right, sb);
+        }
+    }
+
+    // 使用队列遍历数据进行反序列化
+    public TreeNode deserialize(String data) {
+        if (data == null || data.length() == 0) return null;
+        String[] values = data.split(",");
+        Queue<String> queue = new LinkedList<String>();
+        for (int i = 0; i < values.length; i++) {
+            queue.offer(values[i]);
+        }
+        return deserialize(queue);
+    }
+    public TreeNode deserialize(Queue<String> queue) {
+        String subStr = queue.poll();
+        if (subStr.equals("#")) { return null; }
+        TreeNode root = new TreeNode(Integer.valueOf(subStr));
+        root.left = deserialize(queue);
+        root.right = deserialize(queue);
+        return root;
+    }
+
+    // 不使用队列遍历数据进行反序列化
+    public TreeNode deserialize2(String data) {
+        if (data == null || data.length() == 0) return null;
+        String[] values = data.split(",");
+
+        // 由于java不支持int引用传递，这里使用长度为1的数组代替
+        int[] index = new int[1]; // 初始化后默认为0
+        return deserialize2(values, index);
+    }
+    public TreeNode deserialize2(String[] values, int[] index) {
+        String subStr = values[index[0]++]; // 取值后index后移，下次取出下一个值
+        if (subStr.equals("#")) { return null; } // 直接返回空，不构建节点
+        TreeNode root = new TreeNode(Integer.valueOf(subStr));
+        root.left = deserialize2(values, index);
+        root.right = deserialize2(values, index);
+        return root;
+    }
+
+    public static void main(String[] args) {
+        _297_二叉树的序列化与反序列化2 o = new _297_二叉树的序列化与反序列化2();
+        TreeNode root = new TreeNode(1);
+        root.left = new TreeNode(2);
+        root.right = new TreeNode(3);
+        root.right.left = new TreeNode(4);
+        root.right.right = new TreeNode(5);
+        String data = o.serialize(root);
+        System.out.println(2 + " ==>:" + data);
+        TreeNode newRoot = o.deserialize2(data);
+        String data1 = o.serialize(newRoot);
+        System.out.println(2 + " ==>:" + data1);
     }
 }
 

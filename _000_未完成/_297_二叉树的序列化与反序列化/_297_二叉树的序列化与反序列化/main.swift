@@ -103,36 +103,88 @@ class Codec_BFS {
 
 // 前中后序遍历二叉树（BFS：深度优先）
 class Codec_DFS {
+    // 这里采用前序遍历
     // Encodes a tree to a single string.
     func serialize(_ root: TreeNode?) -> String {
-        guard let root = root else { return "" }
+        guard let root = root else { return "#," }
         
-        return ""
+        var str = String(root.val) + ","
+        str += serialize(root.left)
+        str += serialize(root.right)
+        return str
     }
 
     // Decodes your encoded data to tree.
+    // 使用队列，每次都弹出队列首部元素
     func deserialize(_ data: String) -> TreeNode? {
-        return nil
+        // 这里使用了队列的pop，无需index指定位置
+        func preDeserialize(_ values: inout [Substring]) -> TreeNode? {
+            guard !values.isEmpty else { return nil } // 队列为空，直接返回
+            let valueStr = values.removeFirst()
+            guard valueStr != "#" else { return nil } // 如果是#，直接返回空
+            guard let value = Int(valueStr) else { return nil } // intValue成功继续
+            
+            let root = TreeNode(value)
+            root.left = preDeserialize(&values)
+            root.right = preDeserialize(&values)
+            return root
+        }
+        
+        var values = data.split(separator: ",")
+        return preDeserialize(&values)
+    }
+    
+    
+    // 不使用队列，将index作为inout参数传如递归，控制字符节点位置
+    func deserialize2(_ data: String) -> TreeNode? {
+        let values = data.split(separator: ",")
+        var index = 0 // 由于index是要在递归中重用累加，因此这里采用inout
+        return preDeserialize2(values: values, index: &index)
+    }
+    func preDeserialize2(values: [Substring], index: inout Int) -> TreeNode? {
+        // index尾部一定是#，会在下边直接返回，不会导致越界
+        // guard index < values.count else { return nil }
+        
+        let valueStr = values[index] // 取出一个节点
+        index += 1 // 节点取出后，不管是否是空节点都要后移，以便下次取下一个节点
+        guard valueStr != "#" else { return nil } // 如果是#，直接返回空
+        guard let value = Int(valueStr) else { return nil } // intValue成功继续
+        
+        let root = TreeNode(value)
+        root.left = preDeserialize2(values: values, index: &index)
+        root.right = preDeserialize2(values: values, index: &index)
+        return root
     }
 }
 
-
-
 do {
-    do {
-        let root = TreeNode(1)
-        root.left = TreeNode(2)
-        root.right = TreeNode(3)
-        root.right?.left = TreeNode(4)
-        root.right?.right = TreeNode(5)
-        let data = Codec_BFS().serialize(root)
-        print(data)
-        let newRoot = Codec_BFS().deserialize(data)
-        //print(newRoot as Any)
-        let data1 = Codec_BFS().serialize(newRoot)
-        print(data1)
-    }
-    
+//    do {
+//        let root = TreeNode(1)
+//        root.left = TreeNode(2)
+//        root.right = TreeNode(3)
+//        root.right?.left = TreeNode(4)
+//        root.right?.right = TreeNode(5)
+//        let data = Codec_BFS().serialize(root)
+//        print(data)
+//        let newRoot = Codec_BFS().deserialize(data)
+//        //print(newRoot as Any)
+//        let data1 = Codec_BFS().serialize(newRoot)
+//        print(data1)
+//    }
+//
+//    do {
+//        let root = TreeNode(1)
+//        root.left = TreeNode(2)
+//        root.right = TreeNode(3)
+//        root.right?.left = TreeNode(4)
+//        root.right?.right = TreeNode(5)
+//        let data = Codec_DFS().serialize(root)
+//        print(data)
+//        let newRoot = Codec_DFS().deserialize(data)
+//        //print(newRoot as Any)
+//        let data1 = Codec_DFS().serialize(newRoot)
+//        print(data1)
+//    }
     
     do {
         let root = TreeNode(1)
@@ -142,7 +194,7 @@ do {
         root.right?.right = TreeNode(5)
         let data = Codec_DFS().serialize(root)
         print(data)
-        let newRoot = Codec_DFS().deserialize(data)
+        let newRoot = Codec_DFS().deserialize2(data)
         //print(newRoot as Any)
         let data1 = Codec_DFS().serialize(newRoot)
         print(data1)

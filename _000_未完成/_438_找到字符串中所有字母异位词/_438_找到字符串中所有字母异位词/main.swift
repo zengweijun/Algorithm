@@ -14,14 +14,12 @@ import Foundation
  字符串只包含小写英文字母，并且字符串 s 和 p 的长度都不超过 20100。
 
  说明：
-
  字母异位词指字母相同，但排列不同的字符串。
  不考虑答案输出的顺序。
- 示例 1:
 
+ 示例 1:
  输入:
  s: "cbaebabacd" p: "abc"
-
  输出:
  [0, 6]
 
@@ -45,11 +43,48 @@ import Foundation
  链接：https://leetcode-cn.com/problems/find-all-anagrams-in-a-string
  */
 
+// 优秀题解：https://leetcode-cn.com/problems/find-all-anagrams-in-a-string/solution/hua-dong-chuang-kou-tong-yong-si-xiang-jie-jue-zi-/
 class Solution {
+    // MARK: - 蛮力
     func findAnagrams(_ s: String, _ p: String) -> [Int] {
+        func isAnagrams(_ s1: String, _ s2: String) -> Bool {
+            // 私有方法，外部保证s1.count == s2.count
+            var counts = [Int](repeating: 0, count: 26)
+            let baseIndex = Int(("a" as Character).asciiValue ?? 97)
+            for unicodeScalar in s1.unicodeScalars {
+                counts[Int(unicodeScalar.value) - baseIndex] += 1
+            }
+            for unicodeScalar in s2.unicodeScalars {
+                let index = Int(unicodeScalar.value) - baseIndex
+                let count = counts[index]
+                if count == 0 {
+                    return false
+                }
+                counts[index] -= 1
+            }
+            return true
+        }
         
+        var results = [Int]()
+        let sCount = s.count
+        let pCount = p.count
+        if (sCount < pCount) {return results}
+        for i in 0...(sCount - pCount) {
+            let startIndex = s.index(s.startIndex, offsetBy: i)
+            let endIndex = s.index(startIndex, offsetBy: pCount - 1)
+            let subStr = s[startIndex...endIndex]
+            if isAnagrams(String(subStr), p) {
+                results.append(i)
+            }
+        }
+        return results
     }
 }
 
-print("Hello, World!")
+do {
+    do {
+        print(Solution().findAnagrams("cbaebabacd", "abc"))
+        print(Solution().findAnagrams("abab", "ab"))
+    }
+}
 

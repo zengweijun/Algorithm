@@ -220,6 +220,11 @@ class Solution {
         }
         return maxLength
     }
+    
+    //MARK: - 进阶解法3（找出以每一个字符结尾的最大无重复子串），滑动窗口window解法
+    func lengthOfLongestSubstring6(_ s: String) -> Int {
+        
+    }
 }
 
 do {

@@ -16,16 +16,16 @@ import Foundation
  插入一个字符
  删除一个字符
  替换一个字符
+ 
  示例 1:
-
  输入: word1 = "horse", word2 = "ros"
  输出: 3
  解释:
  horse -> rorse (将 'h' 替换为 'r')
  rorse -> rose (删除 'r')
  rose -> ros (删除 'e')
+ 
  示例 2:
-
  输入: word1 = "intention", word2 = "execution"
  输出: 5
  解释:
@@ -42,8 +42,14 @@ import Foundation
 class Solution {
     func minDistance(_ word1: String, _ word2: String) -> Int {
 
+        return 0
     }
 }
 
-print("Hello, World!")
+do {
+    do {
+        print("horse     --> ros       ==> 3", Solution().minDistance("horse", "ros"))
+        print("intention --> execution ==> 5", Solution().minDistance("intention", "execution"))
+    }
+}
 

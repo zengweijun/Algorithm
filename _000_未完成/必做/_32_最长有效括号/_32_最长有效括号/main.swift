@@ -65,12 +65,13 @@ class Solution {
                 } else { // ...))
                     // 和上一个不配对，为...))，如果 i-1结尾有效部分去掉，检查之前是否为"("
                     let throughPreCharIndex = i - dp[i - 1] - 1    // i-1结尾有效串的前一个字符（跳过i-1结尾有效串）
-                    if throughPreCharIndex >= 0 && sChars[throughPreCharIndex] == "("  {
+                    if throughPreCharIndex >= 0 && sChars[throughPreCharIndex] == "("  { // 发现略掉中间有效部分的前一个字符刚好和i匹配
                         // 此时：以i结尾的有效串 [throughPreCharIndex, i]，再检查前一个字符（如存在），如果有效则合并计算
                         // 将中间部分有效长度(i-1结尾有效部) + 2，同时检查此时 i结尾的有效串 之前是否还有一段紧挨着的有效串
                         let throughPrePreCharIndex = i - dp[i - 1] - 2 // 之前是否还有一段紧挨着的有效串
                         dp[i] = dp[i - 1] + 2 + (throughPrePreCharIndex >= 0 ? dp[throughPrePreCharIndex] : 0)
                     }
+                    // 略掉中间有效部分不存在前一个字符或者不与之匹配，直接dp[i] = 0（默认值）
                 }
                 maxLength = max(dp[i], maxLength)
             }

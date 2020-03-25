@@ -40,7 +40,23 @@ import Foundation
 
 class Solution {
     func waysToChange(_ n: Int) -> Int {
+        // let coins = [1, 5, 10, 25]
+        var dp = [Int](repeating: 0, count: n+1)
+        dp[0] = 1
+        dp[1] = 1
         
+        for i in 2...n {
+            if i < 5 {
+                dp[i] = dp[i-1]
+            } else if (i < 10) {
+                dp[i] = dp[i-1] + dp[i-5]
+            } else if (i < 25) {
+                dp[i] = dp[i-1] + dp[i-5] + dp[i-10]
+            } else {
+                dp[i] = dp[i-1] + dp[i-5] + dp[i-10] + dp[25]
+            }
+        }
+        return dp[n]
     }
 }
 

@@ -40,6 +40,14 @@ import Foundation
 
 class Solution {
     func waysToChange(_ n: Int) -> Int {
+        
+    }
+}
 
+
+do {
+    do {
+        print(Solution().waysToChange(5))
+        print(Solution().waysToChange(10))
     }
 }

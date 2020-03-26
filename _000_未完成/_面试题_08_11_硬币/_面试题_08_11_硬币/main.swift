@@ -41,20 +41,25 @@ import Foundation
 class Solution {
     func waysToChange(_ n: Int) -> Int {
         // let coins = [1, 5, 10, 25]
+        // dp[i]表示n分钱的所有可能
+        /* [1, 5, 10, 25]
+         dp[i][j]：取i个硬币，构成金额j的种数
+         每当遍历到一个硬币时，有两种情况：①取当前硬币 dp[i][j]
+         
+         筹够1：取1的时候1种，不取1的时候0中，总数为
+         */
+        let coins = [1, 5, 10, 25]
         var dp = [Int](repeating: 0, count: n+1)
         dp[0] = 1
         dp[1] = 1
-        
-        for i in 2...n {
-            if i < 5 {
-                dp[i] = dp[i-1]
-            } else if (i < 10) {
-                dp[i] = dp[i-1] + dp[i-5]
-            } else if (i < 25) {
-                dp[i] = dp[i-1] + dp[i-5] + dp[i-10]
-            } else {
-                dp[i] = dp[i-1] + dp[i-5] + dp[i-10] + dp[25]
+        for i in 1...n {
+            var count = 0
+            for coin in coins {
+                if coin <= i {
+                    count += dp[i - coin]
+                }
             }
+            dp[i] = count
         }
         return dp[n]
     }

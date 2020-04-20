@@ -32,6 +32,15 @@ import Foundation
 
 class Solution {
     func rob(_ nums: [Int]) -> Int {
+        // 数组中不连续序列的最大值
+        
 
+        return 3
     }
+}
+
+do {
+    print(Solution().rob([1,2,3,1]))
+    print(Solution().rob([2,7,9,3,1]))
+    print(Solution().rob([]))
 }

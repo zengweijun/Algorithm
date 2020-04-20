@@ -133,7 +133,7 @@ class Solution {
          注意：单个字符也似为也符合上述条件
          */
         
-//        if s.count == 0 { return s }
+        if s.count <= 1 { return s }
         let s = [Character](s)
         
         var left = 0

@@ -125,12 +125,12 @@ class Solution {
     }
     
     // 时间：O(n^2)、空间：O(1)
-    // 马拉车算法 Manacher
+    // 马拉车算法 Manacher （实际上是中心扩展算法的升级版）
     func longestPalindrome3(_ s: String) -> String {
         /*
          "babad"
-         算法核心：连续相同的字符组成的子串作为扩展中心，左边为l，右边为r，之后由l和r向两边扩展
-         注意：单个字符也似为也符合上述条件
+         
+         
          */
         
         if s.count <= 1 { return s }

@@ -128,11 +128,89 @@ class Solution2 {
     // 上诉方案中，由于从根节点到左右子节点都做同样的事情，导致了大量重复，这里使用另一种思维，自底向上
     // 即先判断当前子树是否是BST，如果当前子树不是BST，则包含父节点的子树也不可能是BST
     // 如果当前子树是BST，则根据父节点左右BST情况综合判断包含父节点的子树是否是BST，这样处理起来基本每个节点只被访问一次，时间复杂度O(n)
+    
+    /*
+     总体思路：只有root的左右子树都是BST的时候，那么以root为根的二叉树才有可能是BST
+     ①要是实现该思路，应该使用后序遍历：左、右 --> 根
+     ②空节点（空树）也可可以视为一颗二叉搜索树
+     */
+    
+    // 二叉树搜索树的信息
+    struct TreeInfo {
+        let root: TreeNode? // 以root为根的二叉搜索树
+        let size: Int       // 以root为根的二叉搜索树的节点数
+        let min: Int        // 以root为根的二叉搜索树最小节点
+        let max: Int        // 以root为根的二叉搜索树最大节点
+    }
+    
+    func treeInfo(root: TreeNode?) -> TreeInfo? {
+        if root === nil { return nil }
+        
+        // 获取左右子树的最大二叉树信息
+        let li = treeInfo(root: root?.left)
+        let ri = treeInfo(root: root?.right)
+        
+        // 查看左右子树是否为BST
+        /*
+         这里给一个定义：“刚好”表示包含全部节点在内，他们刚好是一个BST
+         ①若左右子树都不为空，且左右有子树都“刚好”（不是包含）BST，并且当前root值处于左右子树（最大、最小值）之间，那root就是BST
+         li !== nil && ri !== nil
+         && li.root === root.left && root.val > li.max
+         && li.root === root.right && root.val < ri.min
+         
+         ②若左子树是nil，且右子树刚好是BST，并且当前root的值小于右子树最小值
+         li === nil && ri !== nil
+         && ri.root === root.right && root.val < ri.min
+         
+         ③若右子树是nil，且左子树刚好是BST，并且当前root的值大于左子树最大值
+         li !== nil && ri === nil
+         && li.root === root.left && root.val > li.max
+         
+         ④左右子树都为空，视为BST
+         li === nil && ri === nil
+         
+         除了以上四种情况外，其它情况都不可能为BST
+         */
+        
+        // 这里使用BST的高度为哨兵，swift中可以使用空代表哨兵
+        var leftBSTSize: Int? = nil
+        var rightBSTSize: Int? = nil
+        
+        // 这里默认为root.val，因为两边都有可能为空，那时候min=max=root.val
+        var min = root?.val
+        var max = root?.val
+        
+        if li == nil { // 说明root的左子是空的，因为只要有一个节点我们也视为BST，空树我们给节点数为0
+            leftBSTSize = 0
+        } else if li?.root === root?.left, let rootVal = root?.val, let liMax = li?.max, rootVal > liMax {
+            leftBSTSize = li?.size
+            min = li?.min
+        }
+        
+        if ri == nil { // 同上
+            rightBSTSize = 0
+        } else if ri?.root === root?.right, let rootVal = root?.val, let riMin = ri?.min, rootVal < riMin {
+            rightBSTSize = ri?.size
+            max = ri?.max
+        }
+        
+        // 两边都“刚好”是BST或者nil，并且能与root组合满足了BST的定义
+        if let lbs = leftBSTSize, let rbs = rightBSTSize {
+            return TreeInfo(root: root, size: lbs + rbs + 1, min: min ?? Int.min, max: max ?? Int.max)
+        }
+        
+        // 左右子树都包含了BST，但不能和root组成更大的BST
+        // 1.两边都不为空，但又一边或者两边都不是“刚好”二叉搜索树，此时返回子树内部包含节点较多的那一刻BST节点数量
+        if li != nil && ri != nil {
+            return (li?.size ?? 0 > ri?.size ?? 0) ? li : ri
+        }
+        
+        // 2.有一边为空（没有包含BST），另外一边包含了BST，但不能与root组合为更大的BST
+        return li != nil ? li : ri
+    }
+    
     func largestBSTSubtree(root: TreeNode?) -> Int {
-        
-        
-        
-        return 0
+        return treeInfo(root: root)?.size ?? 0
     }
 }
 
@@ -224,22 +302,22 @@ do {
     print(Solution1().largestBSTSubtree(root: root))
 }
 
-//do {
-//    /*
-//        10
-//        / \
-//       5  15
-//      / \
-//     1   8
-//        /
-//       7
-//     */
-//    let root = TreeNode.BST([10,5,15,1,8,nil,7])
-//    inOrderRecursive(root: root)
-//    print("---------------")
-//    inOrder(root: root)
-//
-//}
+do {
+    /*
+        10
+        / \
+       5  15
+      / \
+     1   8
+        /
+       7
+     */
+    let root = TreeNode.BST([10,5,15,1,8,nil,7])
+    print("\n++++++++++++++++++++++++++++++++++++++++++")
+    print(Solution2().largestBSTSubtree(root: root))
+    print("\n++++++++++++++++++++++++++++++++++++++++++")
+
+}
 
 
 
